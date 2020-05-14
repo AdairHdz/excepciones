@@ -9,6 +9,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import adair.AdairException;
 import org.junit.Before;
+import sampleClass.Person;
+import java.lang.Exception;
 /**
  *
  * @author Adair Hernández
@@ -18,22 +20,41 @@ public class AdairExceptionTests {
     private int[] array;
     
     @Test(expected = Exception.class)
-    public void testException() throws Exception{
+    public void exercise1RainyDay() throws Exception{
         ae = new AdairException();
-        ae.exercise1ToTest();
+        ae.exercise1RainyDay();
     }
     
-    @Test(expected = NullPointerException.class)
-    public void testNullPointerException(){
+    @Test
+    public void exercise1SunnyDay(){
         ae = new AdairException();
-        ae.exercise2(null);
+        ae.exercise1SunnyDay();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void exercise2RainyDay(){
+        ae = new AdairException();
+        ae.exercise2RainyDay();
+    }
+    
+    @Test
+    public void exercise2SunnyDay(){
+        ae = new AdairException();
+        ae.exercise2SunnyDay();
     }
     
     @Test(expected = ArrayIndexOutOfBoundsException.class)
-    public void testArrayIndexOutOfBoundsException(){
+    public void exercise3RainyDay(){
         ae = new AdairException();
-        this.array = new int[10];
-        ae.exercise3(array);
+        ae.exercise3RainyDay();
     }
+    
+    @Test
+    public void exercise3SunnyDay(){
+        ae = new AdairException();
+        ae.exercise3SunnyDay();
+    }
+    
+    
     
 }
