@@ -5,48 +5,64 @@
  */
 package adair;
 
+import sampleClass.Person;
+
 /**
  *
  * @author Adair Hernández
  */
 public class AdairException {
-    public void exercise1() {
+
+
+    public void exercise1SunnyDay(){
         try {
-            throw new Exception("This is my message");
         } catch (Exception e) {
-            System.out.println("An exception occured: " + e.getMessage());
+            System.err.println("Caught Exception1");
+            e.printStackTrace();
         } finally {
-            System.out.println("I was here");
+            System.out.println("Made it to finally");
         }
     }
     
-    public void exercise1ToTest() throws Exception{
-        throw new Exception();
+    public void exercise1RainyDay() throws Exception {
+        throw new Exception("This is my message");
     }
-    
-    public void exercise2(){
-        Object myObject = null;
-        try{
-            myObject.toString();
-        }catch(NullPointerException e){
-            System.out.println("A NullPointerException occured");
+
+
+    public void exercise2SunnyDay() {
+        Integer i = null;
+        try {
+            i = 10;
+            System.out.println(i.toString());
+        } catch (NullPointerException e) {
+            System.err.println("Caught NullPointerException");
+            e.printStackTrace();
+        } finally {
+            System.out.println("Got through it");
         }
     }
-    
-    public void exercise2(Object object){
-        System.out.println(object.toString());
+
+    public void exercise2RainyDay() {
+        Integer i = null;
+        System.out.println(i.toString());
     }
-    
-    public void exercise3(){
-        int[] myArray = new int[10];
-        try{
-            myArray[10] = 4;
-        }catch(ArrayIndexOutOfBoundsException e){
-            System.out.println("An ArrayIndexOutOfBoundsException has occured");
+
+    public void exercise3RainyDay() {
+        int[] ia = new int[2];
+        ia[2] = 3;
+    }
+
+    public void exercise3SunnyDay() {
+        int[] ia = new int[2];
+        try {
+            ia[2] = 3;
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.err.println(
+                    "Caught ArrayIndexOutOfBoundsException");
+            e.printStackTrace();
         }
+
     }
-    
-    public void exercise3(int[] myArray){
-        myArray[myArray.length + 10] = 0;
-    }
+
+
 }

@@ -18,8 +18,7 @@ public class Excepciones {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        AdairException ae = new AdairException();
-        ae.exercise3();
+        
     }
     
 }
