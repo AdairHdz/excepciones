@@ -17,23 +17,6 @@ public class AdairExceptionTests {
     private AdairException ae;
     private int[] array;
     
-    @Test(expected = Exception.class)
-    public void testException() throws Exception{
-        ae = new AdairException();
-        ae.exercise1ToTest();
-    }
-    
-    @Test(expected = NullPointerException.class)
-    public void testNullPointerException(){
-        ae = new AdairException();
-        ae.exercise2(null);
-    }
-    
-    @Test(expected = ArrayIndexOutOfBoundsException.class)
-    public void testArrayIndexOutOfBoundsException(){
-        ae = new AdairException();
-        this.array = new int[10];
-        ae.exercise3(array);
-    }
+
     
 }
